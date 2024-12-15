@@ -1,9 +1,9 @@
 console.log("this is another module")
 
 // By Default Module Protect their variables and functions from leaking
-var x = 50;
+export var x = 50;
 
-function calculateSum(a, b) {
+export function calculateSum(a, b) {
     console.log(a + b)
 }
 // if we want to use this variable and function another module then we have to explicitly export it
@@ -11,7 +11,12 @@ function calculateSum(a, b) {
 // module.exports = calculateSum
 // or we can export both as object
 
-module.exports = {
-    x: x,
-    calculateSum: calculateSum
-}
+// module.exports = {
+//     x: x,
+//     calculateSum: calculateSum
+// }
+
+// sort 
+
+// module.exports = {x , calculateSum}
+

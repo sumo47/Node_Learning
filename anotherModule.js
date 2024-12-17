@@ -1,9 +1,9 @@
 console.log("this is another module")
 
 // By Default Module Protect their variables and functions from leaking
-export var x = 50;
+var x = 50;
 
-export function calculateSum(a, b) {
+function calculateSum(a, b) {
     console.log(a + b)
 }
 // if we want to use this variable and function another module then we have to explicitly export it
@@ -16,7 +16,9 @@ export function calculateSum(a, b) {
 //     calculateSum: calculateSum
 // }
 
-// sort 
+z = "hello " // it will give error in ES module because of strict mode
 
-// module.exports = {x , calculateSum}
+// sort
+
+module.exports = {x , calculateSum}
 

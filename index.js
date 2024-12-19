@@ -1,33 +1,35 @@
-// require("./anotherModule.js") // one module into another module
+require("./anotherModule")
+// All the code of module is wrapped inside a function(IIFE) when require invoked
+// IIFE - Immediately Invoked Function Expression
 
-// const anotherModule = require("./anotherModule.js")
-// now we can use function and variable of another module
+(function(){
+ // all code of the module runs inside here 
+})() // here we immediately call it
+// when we wrapped inside paranthese it become expression
 
-// import { calculateSum, x } from "./anotherModule.js";
+(function (){})()  // - now it become immediately invoked function expression
+// Privacy - it keeps var & funciton safe 
 
-// const {calculateSum, x} = require("./anotherModule.js")
-// destructuring on the fly
+// (function (module, require){
+//     require(/* path */)
+//     function xyz (){
+//         const a = "sumo"
+//         function b(){
+//             return console.log("insider function")
+//         }
+//         b()
+//     }
+    
+//     console.log("module exported")
+//     module.exports = {xyz}
 
-// const {multiplicationFunction, sum} = require('./calculate/index')
-const {multiplicationFunction, sum} = require('./calculate') // we can now just require folder and nodejs will manage all things
-// because of index file
-// this is how we group file
+// })()
 
+//? how are variable & function private in different module?
+// IIFE & require(statement) -- (wrapping value)
 
-console.log(globalThis === global)
+//? How do you get access to module.exports ?
+// Node js passes module as one of the parameter to the IIFE.
 
-var a = 10;
-var b = 20;
-
-// calculateSum() 
-// calculateSum(a, b)
-// console.log(x)
-multiplicationFunction(a,b)
-sum(a,b)
-
-
-//! how to import json
-const data = require("./data.json")
-
-console.log(data)
-
+const util = require("node:util")
+//inbuilt module

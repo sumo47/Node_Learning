@@ -1,24 +1,15 @@
-console.log("this is another module")
-
-// By Default Module Protect their variables and functions from leaking
-var x = 50;
-
-function calculateSum(a, b) {
-    console.log(a + b)
+function xyz (){
+    const a = "sumo"
+    function b(){
+        return console.log("insider function")
+    }
+    b()
 }
-// if we want to use this variable and function another module then we have to explicitly export it
 
-// module.exports = calculateSum
-// or we can export both as object
+console.log("module exported")
 
-// module.exports = {
-//     x: x,
-//     calculateSum: calculateSum
-// }
 
-z = "hello " // it will give error in ES module because of strict mode
 
-// sort
+// console.log(a) // give error , scope problem
 
-module.exports = {x , calculateSum}
-
+module.exports = {xyz}

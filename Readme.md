@@ -51,3 +51,19 @@
 # javascript both ( interpreted & compiled)
  - javascript uses interpreter and compiler to work
  - compilation method is known as in js - JIT Compiler ( Just in time compiled)
+
+- Tick - one full cycle of event loop
+- By Default LibUv have 4 Thread in threadpool
+- we can change using , ```process.env.UV_THREADPOOL_SIZE = 5``` command
+- timer callback queue uses min heap data structure
+
+- Don't Block the Mian thread
+ - sync methods - Heavy json objects
+ - complex Regex - Complex calculations/Loops
+- Data sctuctures is important 
+ - epoll uses red-black-tree ds
+- Naming is vary important
+ - process.nextTick vs setImmediate
+- There's a lot to learn
+
+
